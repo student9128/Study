@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <!-- 注意：对于中文网页需要使用 <meta charset="utf-8"> 声明编码，否则会出现乱码 -->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--[if lt IE 9]>
+    <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+    <script>
+        document.createElement("myHero")
+    </script>
+    <style>
+      myHero {
+          display: block;
+          background-color: aliceblue;
+          padding: 50px;
+          font-size: 30px;
+      }
+    </style>
+</head>
+<body>
+<myHero>
+    我的第一个新元素
+</myHero>
+<table border="1" cellspacing="0">
+    <th>Hello</th>
+    <tr>
+        <td>100</td>
+        <td>200</td>
+        <td>300</td>
+    </tr>
+    <tr>
+        <td>400</td>
+        <td>500</td>
+        <td>600</td>
+    </tr>
+</table>
+<form>
+    FirstName:<input type="text" name="user"><br>
+    Password:<input type="password" name="password">
+</form>
+<iframe src="http://blog.csdn.net/student9128/article/details/53239087" width="400" height="400"
+        frameborder="0"></iframe><br>
+
+<script>document.write("Hello World");</script>
+<p id="demo">JavaScript可以触发事件，像按钮点击</p>
+<script>
+    function myFunction() {
+        var hello = document.getElementById("demo");
+        hello.innerHTML = "Hello JavaScript";
+        hello.style.color = "#FF0000";
+    }
+    document.write("a&#768;")
+</script>
+<button type="button" onclick="myFunction()">点我</button><br/>
+<canvas id="icanvas" width="300" height="200" style="border:2px solid #c3c3c3;">
+    您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<script>
+    var c = document.getElementById("icanvas");
+    var context = c.getContext("2d");
+//    context.fillStyle = "#FF0000";
+//    context.fillRect(0, 0, 200, 150);
+//    context.moveTo(200, 150);
+//    context.lineTo(300, 200);
+//    context.stroke();
+//
+//    context.beginPath();
+//    context.arc(200, 150, 20, 0, 2 * Math.PI);
+//    context.stroke();
+//
+//    context.font = "50px Arial";
+//    context.strokeText("Hello world",50,50);
+
+    var canvasGradient = context.createRadialGradient(75,50,5,90,60,100);
+    context.addColorStop(0, "green");
+    context.addColorStop(1, "white");
+    context.fillStyle = canvasGradient;
+    context.fillRect(10,10,150,80);
+
+    var c=document.getElementById("icanvas");
+    var ctx=c.getContext("2d");
+
+    // Create gradient
+    var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    // Fill with gradient
+    ctx.fillStyle=grd;
+    ctx.fillRect(10,10,150,80);
+
+
+</script>
+
+<hr/>
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+    您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<script>
+
+//    var c=document.getElementById("myCanvas");
+//    var ctx=c.getContext("2d");
+//    ctx.fillStyle="#FF0000";
+//    ctx.fillRect(0,0,150,75);
+
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+
+    // Create gradient
+    var grd=ctx.createLinearGradient(0,0,200,0);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    // Fill with gradient
+    ctx.fillStyle=grd;
+    ctx.fillRect(10,10,150,80);
+</script>
+</body>
+</html>
