@@ -271,5 +271,34 @@
 
 </table>
 
+<div style="text-align: center">
+    <button onclick="playPause()">播放/暂停</button>
+    <button onclick="bigger()">放大</button>
+    <button onclick="smaller()">缩小</button>
+    <button onclick="normal()">普通</button>
+</div>
+<video id="myVideo" width="420" controls = controls>
+
+    <source src="video/Dwaynewade.mp4" type="video/mp4">
+</video>
+<script>
+    var myVideo = document.getElementById("myVideo");
+     function playPause() {
+         if (myVideo.paused)
+             myVideo.play();
+         else
+             myVideo.pause();
+     }
+     function bigger() {
+         myVideo.width = 560;
+     }
+     function smaller() {
+         myVideo.width = 200;
+     }
+     function normal() {
+         myVideo.width = 420;
+     }
+
+</script>
 </body>
 </html>
