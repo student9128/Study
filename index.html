@@ -8,6 +8,7 @@
     <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <![endif]-->
     <script>
+
         document.createElement("myHero")
     </script>
     <style>
@@ -18,6 +19,30 @@
             font-size: 30px;
         }
     </style>
+    <script>
+        function openWindow() {
+            var isOpen;
+            var site;
+            isOpen = confirm("确定打开新窗口吗？");
+            if (isOpen == true) {
+                site = prompt("please input the website");
+                if (site.length > 0) {
+                    window.open(site, '_blank', 'width = 500,height=400,toolbar=no');
+                }
+            }
+            else {
+                window.open('http://www.imooc.com', '_blank', 'width = 500,height=400,toolbar=no');
+            }
+
+        }
+        /**
+         * 改变颜色
+         */
+        function changeColor() {
+            var element = document.getElementById("demo1");
+            element.style.color = "red";
+        }
+    </script>
 </head>
 <body>
 <myHero>
@@ -236,17 +261,20 @@
         <td>Jelly Bean</td>
         <td>4.3x</td>
         <td>API level 18</td>
-    </tr>   <tr align="left">
+    </tr>
+    <tr align="left">
         <td>19</td>
         <td>KitKat</td>
         <td>4.4-4.4.4</td>
         <td>API level 19</td>
-    </tr>   <tr align="left">
+    </tr>
+    <tr align="left">
         <td>20</td>
         <td>Lollipop</td>
         <td>5.0</td>
         <td>API level 21</td>
-    </tr>   <tr align="left">
+    </tr>
+    <tr align="left">
         <td>21</td>
         <td>Lollipop</td>
         <td>5.1</td>
@@ -257,12 +285,14 @@
         <td>Marshmallow</td>
         <td>6.0</td>
         <td>API level 23</td>
-    </tr><tr align="left">
+    </tr>
+    <tr align="left">
         <td>23</td>
         <td>Nougat</td>
         <td>7.0</td>
         <td>API level 24</td>
-    </tr><tr align="left">
+    </tr>
+    <tr align="left">
         <td>24</td>
         <td>Nougat</td>
         <td>7.1.1</td>
@@ -277,28 +307,127 @@
     <button onclick="smaller()">缩小</button>
     <button onclick="normal()">普通</button>
 </div>
-<video id="myVideo" width="420" controls = controls>
+<video id="myVideo" width="420" controls=controls>
 
     <source src="video/Dwaynewade.mp4" type="video/mp4">
 </video>
+<p id="demo1">Hello JS ~</p>
 <script>
     var myVideo = document.getElementById("myVideo");
-     function playPause() {
-         if (myVideo.paused)
-             myVideo.play();
-         else
-             myVideo.pause();
-     }
-     function bigger() {
-         myVideo.width = 560;
-     }
-     function smaller() {
-         myVideo.width = 200;
-     }
-     function normal() {
-         myVideo.width = 420;
-     }
+    function playPause() {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+    function bigger() {
+        myVideo.width = 560;
+    }
+    function smaller() {
+        myVideo.width = 200;
+    }
+    function normal() {
+        myVideo.width = 420;
+    }
 
+
+</script>
+<input type="button" value="点击打开新窗口" onclick="openWindow()"/>
+<input type="button" value="改变颜色" onclick="changeColor()"/>
+
+<script>
+    var infos = [['小A', '女', 21, '大一'], ['小B', '男', 23, '大三'],
+        ['小C', '男', 24, '大四'], ['小D', '女', 21, '大一'],
+        ['小E', '女', 22, '大四'], ['小F', '男', 21, '大一'],
+        ['小G', '女', 22, '大二'], ['小H', '女', 20, '大三'],
+        ['小I', '女', 20, '大一'], ['小J', '男', 20, '大三']];
+    //        document.write(infos.length+"<br/>");
+    for (var i = 0; i < infos.length; i++) {
+        if (infos[i][3] == "大一") {
+            if (infos[i][1] == "女") {
+                document.write("女生：" + infos[i][0] + "<br/>");
+            }
+        }
+    }
+    //
+    //     document.write("Hello-----------------");
+    "<br/>";
+    "<br/>";
+
+</script>
+<script>
+    function count() {
+        var text01, text02, result, selectchar;
+        var number1, number2;
+        text01 = document.getElementById("text1").value;
+        text02 = document.getElementById("text2").value;
+        selectchar = document.getElementById("select").value;
+        result = document.getElementById("result");
+        number1 = parseInt(text01);
+        number2 = parseInt(text02);
+//        alert(selectchar[0].text);
+//        alert(selectchar);
+//        alert(number1);
+        switch (selectchar) {
+            case "+":
+                result.value = number1 + number2;
+               break;
+            case "-":
+                result.value = number1 - number2;
+                break;
+            case "*":
+                result.value = number1 * number2;
+                break;
+            case "/":
+                result.value = number1 / number2;
+                break;
+            default:
+                result.value = number1 + number2;
+                break;
+        }
+    }
+    function hello() {
+        var hello = document.getElementById("result");
+        hello.value = "hello";
+    }
+
+</script>
+<input type="text" id="text1"/>
+<select id="select">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<input type="text" id="text2"/>
+<input type="button" value="=" onclick="count()"/>
+<input type="text" id="result"/><br/>
+<input type="button" value="say hello" onclick="hello()"/>
+<script type="text/javascript">
+    window.onunload = onunload_message;
+    function onunload_message() {
+        alert("您确定离开该网页吗？");
+    }
+</script>
+<script type="text/javascript">
+    var theDate = new Date();
+    var weekdaynum = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+    var day = theDate.getFullYear()+"年"+theDate.getMonth()+1+"月"+theDate.getDate()+"日"+"&nbsp"+weekdaynum[theDate.getDay()];
+    document.write(day);
+    theDate.getHours()
+    theDate.getMinutes()
+    theDate.getSeconds()
+    var scoreStr = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+    var array = scoreStr.split(";");
+    var sum =0;
+    for (var i =0;i<array.length;i++){
+        var s = array[i].substring(3, array[i].length);
+//        alert(s);
+        sum = sum + parseInt(s);
+    }
+//    document.write(array[0]);
+    document.write("--班级总分为"+sum);
+    window.open("https://www.baidu.com","_blank", "width=600,height=400");
 </script>
 </body>
 </html>
