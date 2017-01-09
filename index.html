@@ -43,8 +43,41 @@
             element.style.color = "red";
         }
     </script>
+
+    <script type="text/javascript">
+        var attime;
+        function clock(){
+            var time=new Date();
+            attime= time.getHours()+":"+time.getMinutes()+"："+time.getSeconds();
+            document.getElementById("clock").value = attime;
+        }
+        setInterval(clock,100);
+    </script>
+
+    <script type="text/javascript">
+        var i;
+        function clock1(){
+            var time=new Date();
+            document.getElementById("clock1").value = time;
+        }
+        i = setInterval("clock1()",100);
+        function clearInter() {
+            clearInterval(i);
+        }
+
+    </script>
+    <script type="text/javascript">
+        var num=0;
+        function startCount() {
+            document.getElementById('count').value=num;
+            num=num+1;
+            setTimeout("startCount()",1000);
+        }
+
+    </script>
 </head>
 <body>
+<input type="text" id="clock" size="50"  />
 <myHero>
     我的第一个新元素
 </myHero>
@@ -429,5 +462,39 @@
     document.write("--班级总分为"+sum);
     window.open("https://www.baidu.com","_blank", "width=600,height=400");
 </script>
+<input type="text" id="clock1" size="50"  />
+<input type="button" value="Stop"  onclick="clearInter()"/>
+
+<input type="text" id="count" />
+<input type="button" value="Start"onclick="startCount()"/>
+
+<script>
+function validB(){
+var u_agent = navigator.userAgent      ;
+var B_name="不是想用的主流浏览器!";
+if(u_agent.indexOf("Firefox")>-1){
+B_name="Firefox";
+}else if(u_agent.indexOf("Chrome")>-1){
+B_name="Chrome";
+}else if(u_agent.indexOf("MSIE")>-1&&u_agent.indexOf("Trident")>-1){
+B_name="IE(8-10)";
+}
+document.write("浏览器:"+B_name+"<br>");
+document.write("u_agent:"+u_agent+"<br>");
+}
+</script>
+<input type="button" value="查看浏览器"  onclick="validB()" >
+
+<script type="text/javascript">
+    var num=0;
+    function startCount() {
+        document.getElementById('count1').value=num;
+        num=num+1;
+        setTimeout("startCount()",1000);
+    }
+
+</script>
+<input type="text" id="count1">
+
 </body>
 </html>
