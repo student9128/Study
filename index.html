@@ -46,38 +46,38 @@
 
     <script type="text/javascript">
         var attime;
-        function clock(){
-            var time=new Date();
-            attime= time.getHours()+":"+time.getMinutes()+"："+time.getSeconds();
+        function clock() {
+            var time = new Date();
+            attime = time.getHours() + ":" + time.getMinutes() + "：" + time.getSeconds();
             document.getElementById("clock").value = attime;
         }
-        setInterval(clock,100);
+        setInterval(clock, 100);
     </script>
 
     <script type="text/javascript">
         var i;
-        function clock1(){
-            var time=new Date();
+        function clock1() {
+            var time = new Date();
             document.getElementById("clock1").value = time;
         }
-        i = setInterval("clock1()",100);
+        i = setInterval("clock1()", 100);
         function clearInter() {
             clearInterval(i);
         }
 
     </script>
     <script type="text/javascript">
-        var num=0;
+        var num = 0;
         function startCount() {
-            document.getElementById('count').value=num;
-            num=num+1;
-            setTimeout("startCount()",1000);
+            document.getElementById('count').value = num;
+            num = num + 1;
+            setTimeout("startCount()", 1000);
         }
 
     </script>
 </head>
 <body>
-<input type="text" id="clock" size="50"  />
+<input type="text" id="clock" size="50"/>
 <myHero>
     我的第一个新元素
 </myHero>
@@ -404,7 +404,7 @@
         switch (selectchar) {
             case "+":
                 result.value = number1 + number2;
-               break;
+                break;
             case "-":
                 result.value = number1 - number2;
                 break;
@@ -444,57 +444,214 @@
 </script>
 <script type="text/javascript">
     var theDate = new Date();
-    var weekdaynum = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
-    var day = theDate.getFullYear()+"年"+theDate.getMonth()+1+"月"+theDate.getDate()+"日"+"&nbsp"+weekdaynum[theDate.getDay()];
+    var weekdaynum = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+    var day = theDate.getFullYear() + "年" + theDate.getMonth() + 1 + "月" + theDate.getDate() + "日" + "&nbsp" + weekdaynum[theDate.getDay()];
     document.write(day);
     theDate.getHours()
     theDate.getMinutes()
     theDate.getSeconds()
     var scoreStr = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
     var array = scoreStr.split(";");
-    var sum =0;
-    for (var i =0;i<array.length;i++){
+    var sum = 0;
+    for (var i = 0; i < array.length; i++) {
         var s = array[i].substring(3, array[i].length);
 //        alert(s);
         sum = sum + parseInt(s);
     }
-//    document.write(array[0]);
-    document.write("--班级总分为"+sum);
-    window.open("https://www.baidu.com","_blank", "width=600,height=400");
+    //    document.write(array[0]);
+    document.write("--班级总分为" + sum);
+    window.open("https://www.baidu.com", "_blank", "width=600,height=400");
 </script>
-<input type="text" id="clock1" size="50"  />
-<input type="button" value="Stop"  onclick="clearInter()"/>
+<input type="text" id="clock1" size="50"/>
+<input type="button" value="Stop" onclick="clearInter()"/>
 
-<input type="text" id="count" />
-<input type="button" value="Start"onclick="startCount()"/>
+<input type="text" id="count"/>
+<input type="button" value="Start" onclick="startCount()"/>
 
 <script>
-function validB(){
-var u_agent = navigator.userAgent      ;
-var B_name="不是想用的主流浏览器!";
-if(u_agent.indexOf("Firefox")>-1){
-B_name="Firefox";
-}else if(u_agent.indexOf("Chrome")>-1){
-B_name="Chrome";
-}else if(u_agent.indexOf("MSIE")>-1&&u_agent.indexOf("Trident")>-1){
-B_name="IE(8-10)";
-}
-document.write("浏览器:"+B_name+"<br>");
-document.write("u_agent:"+u_agent+"<br>");
-}
+    function validB() {
+        var u_agent = navigator.userAgent;
+        var B_name = "不是想用的主流浏览器!";
+        if (u_agent.indexOf("Firefox") > -1) {
+            B_name = "Firefox";
+        } else if (u_agent.indexOf("Chrome") > -1) {
+            B_name = "Chrome";
+        } else if (u_agent.indexOf("MSIE") > -1 && u_agent.indexOf("Trident") > -1) {
+            B_name = "IE(8-10)";
+        }
+        document.write("浏览器:" + B_name + "<br>");
+        document.write("u_agent:" + u_agent + "<br>");
+    }
 </script>
-<input type="button" value="查看浏览器"  onclick="validB()" >
+<input type="button" value="查看浏览器" onclick="validB()">
 
 <script type="text/javascript">
-    var num=0;
+    var num = 0;
     function startCount() {
-        document.getElementById('count1').value=num;
-        num=num+1;
-        setTimeout("startCount()",1000);
+        document.getElementById('count1').value = num;
+        num = num + 1;
+        setTimeout("startCount()", 1000);
     }
 
 </script>
 <input type="text" id="count1">
+
+<ul id="u1">
+    <li id="a">javascript</li>
+    <li id="b">jquery</li>
+    <li id="c">html</li>
+</ul>
+<ul id="u2">
+    <li id="d">css3</li>
+    <li id="e">php</li>
+    <li id="f">java</li>
+</ul>
+<!-- nextSibling,previousSiblint已知节点的下一个、上一个节点-->
+<script type="text/javascript">
+    function get_nextSibling(n) {
+        var x = n.nextSibling;
+        while (x && x.nodeType != 1) {
+            x = x.nextSibling;
+        }
+        return x;
+    }
+    function get_previousSibling(n) {
+        var x = n.previousSibling;
+        while (x && x.nodeType != 1) {
+            x = x.previousSibling;
+        }
+        return x;
+    }
+    var x = document.getElementsByTagName("li")[0];
+    document.write(x.nodeName);
+    document.write(" = ");
+    document.write(x.innerHTML);
+
+    var y = get_nextSibling(x);
+
+    if (y != null) {
+        document.write("<br />nextsibling: ");
+        document.write(y.nodeName);
+        document.write(" = ");
+        document.write(y.innerHTML + "<br/>");
+    } else {
+        document.write("<br>已经是最后一个节点");
+    }
+    var a = document.getElementsByTagName("li");
+    var b = a[a.length - 1];
+    document.write(b.nodeName);
+    document.write(" = ");
+    document.write(b.innerHTML);
+    var c = get_previousSibling(b);
+    if (c != null) {
+
+        document.write("<br>" + c.nodeName);
+        document.write(" = ");
+        document.write(c.innerHTML + "<br>");
+    } else {
+        document.write("<br>已经是第一个节点");
+    }
+</script>
+<!--appendChild-->
+<script type="text/javascript">
+
+    var otest = document.getElementById("test");
+    var newnode = document.createElement("li");
+    newnode.innerHTML = "PHP";
+    otest.appendChild(newnode);
+
+
+</script>
+
+
+<ul id="test">
+    <li>JavaScript</li>
+    <li>HTML</li>
+</ul>
+
+<script type="text/javascript">
+
+    var otest = document.getElementById("test");
+    var newnode = document.createElement("li");
+    newnode.innerHTML = "PHP";
+    otest.insertBefore(newnode, otest.childNodes[1]);
+
+
+</script>
+
+<div id="content">
+    <h1>html</h1>
+    <h1>php</h1>
+    <h1>javascript</h1>
+    <h1>jquery</h1>
+    <h1>java</h1>
+</div>
+
+<script type="text/javascript">
+    function clearText() {
+        var content = document.getElementById("content");
+        // 在此完成该函数
+        for (var i = 1; i < content.childNodes.length; i + 2) {
+
+            var x = content.removeChild(content.childNodes[i]);
+            document.write("删除的节点内容:" + x.innerHTML);
+        }
+
+    }
+</script>
+
+<button onclick="replaceMessage()">清除节点内容</button>
+
+
+<div><b id="oldnode">JavaScript</b>是一个很常用的技术，为网页添加动态效果。</div>
+<a href="javascript:replaceMessage()"> 将加粗改为斜体</a>
+
+<script type="text/javascript">
+    function replaceMessage(){
+        var newnode1 = document.createElement("i");
+        var oldnode = document.getElementById("oldnode");
+        var text = document.createTextNode(oldnode.innerHTML);
+        newnode1.appendChild(text);
+        oldnode.parentNode.replaceChild(newnode1, oldnode);
+    }
+</script>
+
+
+
+
+<script type="text/javascript">
+    function aa(){
+        var newnode = document.createElement("p");
+        var newnodeText = document.createTextNode("JavaScript");
+        newnode.appendChild(newnodeText);
+
+        var oldNode = document.getElementById("oldnode");
+        oldNode.parentNode.replaceChild(newnode,oldNode);
+    }
+</script>
+
+<!--<h1 id="oldnode">Java</h1>-->
+<a href="javascript:aa()">"Java"替换"JavaScript"</a>
+
+
+<script type="text/javascript">
+    var main = document.body;
+    //创建链接
+    function createa(url,text)
+    {
+        var a = document.createElement("a");
+        a.href = url;
+        a.text = text;
+        a.color = "red";
+        main.appendChild(a);
+
+    }
+    // 调用函数创建链接
+    createa("http://www.baidu.com", "Baidu");
+
+</script>
+
+
 
 </body>
 </html>
