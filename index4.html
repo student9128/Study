@@ -1,15 +1,13 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <title> new document </title>
     <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
     <script type="text/javascript">
-        window.onload = function(){
+        window.onload = function () {
             Highlight();
         }
-        function addOne(obj){
+        function addOne(obj) {
             var tbody = document.getElementById('table').lastChild;
             var tr = document.createElement('tr');
 
@@ -29,20 +27,20 @@
             Highlight();
         }
 
-        function deleteRow(obj){
+        function deleteRow(obj) {
             var tbody = document.getElementById('table').lastChild;
             var tr = obj.parentNode.parentNode;
             tbody.removeChild(tr);
         }
-        function Highlight(){
+        function Highlight() {
             var tbody = document.getElementById('table').lastChild;
             trs = tbody.getElementsByTagName('tr');
-            for(var i =1;i<trs.length;i++){
-                trs[i].onmouseover = function(){
-                    this.style.backgroundColor ="#f2f2f2";
+            for (var i = 1; i < trs.length; i++) {
+                trs[i].onmouseover = function () {
+                    this.style.backgroundColor = "#f2f2f2";
                 }
-                trs[i].onmouseout = function(){
-                    this.style.backgroundColor ="#fff";
+                trs[i].onmouseout = function () {
+                    this.style.backgroundColor = "#fff";
                 }
             }
         }
@@ -70,6 +68,94 @@
     </tr>
 
 </table>
-<input type="button" value="添加一行" onclick="addOne()" />
+<input type="button" value="添加一行" onclick="addOne()"/>
+
+
+<table border="0" align="center" cellspacing="0" cellpadding="5">
+    <tr bgcolor="#ED9728" style="color: #FFFFFF">
+        <td colspan="5" align="center">关键字</td>
+    </tr>
+    <tr>
+        <td>break</td>
+        <td>case</td>
+        <td>catch</td>
+        <td>default</td>
+        <td>delete</td>
+    </tr>
+    <tr>
+        <td>do</td>
+        <td>else</td>
+        <td>finally</td>
+        <td>for</td>
+        <td>if</td>
+    </tr>
+    <tr>
+        <td>in</td>
+        <td>instance of</td>
+        <td>new</td>
+        <td>return</td>
+        <td>switch</td>
+    </tr>
+    <tr>
+        <td>throw</td>
+        <td>try</td>
+        <td>type of</td>
+        <td>var</td>
+        <td>void</td>
+
+    </tr>
+    <tr>
+        <td>while</td>
+
+    </tr>
+</table>
+<table border="0" align="center" cellspacing="0" cellpadding="5">
+    <tr bgcolor="#ED9728" style="color: #FFFFFF">
+        <td colspan="5" align="center">保留字</td>
+    </tr>
+    <tr>
+        <td>abstract</td>
+        <td>boolean</td>
+        <td>byte</td>
+        <td>char</td>
+        <td>class</td>
+    </tr>
+    <tr>
+        <td>const</td>
+        <td>debugger</td>
+        <td>enum</td>
+        <td>export</td>
+        <td>extends</td>
+    </tr>
+    <tr>
+        <td>final</td>
+        <td>float</td>
+        <td>goto</td>
+        <td>implements</td>
+        <td>int</td>
+    </tr>
+    <tr>
+        <td>interface</td>
+        <td>long</td>
+        <td>native</td>
+        <td>package</td>
+        <td>private</td>
+
+    </tr>
+    <tr>
+        <td>protected</td>
+        <td>short</td>
+        <td>static</td>
+        <td>super</td>
+        <td>synchronized</td>
+
+    </tr>
+    <tr>
+        <td>throws</td>
+        <td>transient</td>
+        <td>volatile</td>
+
+    </tr>
+</table>
 </body>
 </html>
